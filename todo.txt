@@ -1,0 +1,4 @@
+clean
+sweep
+wash
+cook
