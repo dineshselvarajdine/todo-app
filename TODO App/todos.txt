@@ -2,3 +2,5 @@ clean
 sweep
 wash
 cook
+adcac
+cwcw
