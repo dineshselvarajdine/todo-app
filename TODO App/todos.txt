@@ -2,6 +2,6 @@ clean
 sweep
 go out
 buy
-my new todo is aded
-hello
-din
+my new todo
+hi
+thanks
