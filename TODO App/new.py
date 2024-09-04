@@ -1,37 +1,28 @@
-# def my_decorator(func):
-#     def wrapper():
-#         print("Something is happening before the function is called.")
-#         func()
-#         print("Something is happening after the function is called.")
-#     return wrapper
-#
-# @my_decorator
-# def say_hello():
-#     print("Hello!")
-#
-# say_hello()
-#
-# squares = [x**2 for x in range(10) if x % 2 == 0]
-# print(squares)
-#
-# squares = [x**2 for x in range(10)]
-# print(squares)
-#
-# squares = [x**2 for x in range(10)  if x % 2 == 0]
-# print(squares)
+# NOTE: This script runs only on your local IDE
+import PySimpleGUI as sg
+from converters import convert
 
-# class Person:
-#     def __init__(self, name, age):
-#         self.name = name
-#         self.age = age
-#
-# print (Person)
+feet_label = sg.Text("Enter feet: ")
+feet_input = sg.Input(key="feet")
 
-numbers = [1, 2, 3]
-iterator = iter(numbers)  # Get an iterator for the list
+inches_label = sg.Text("Enter inches: ")
+inches_input = sg.Input(key="inches")
 
-print(next(iterator))  # Output: 1
-print(next(iterator))  # Output: 2
-print(next(iterator))  # Output: 3
-# print(next(iterator))  # Raises StopIteration
+button = sg.Button("Convert")
+output_label = sg.Text("", key="output")
 
+window = sg.Window("Convertor",
+                   layout=[[feet_label, feet_input],
+                           [inches_label, inches_input],
+                           [button, output_label]])
+
+while True:
+    event, values = window.read()
+    feet = float(values["feet"])
+    inches = float(values["inches"])
+
+    result = convert(feet, inches)
+    window["output"].update(value=f"{result} m", text_color="white")
+
+
+window.close()

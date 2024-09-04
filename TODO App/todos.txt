@@ -3,8 +3,5 @@ sweep
 go out
 buy
 my new todo is aded
-september
 hello
-dinesh
-hello
-
+din
